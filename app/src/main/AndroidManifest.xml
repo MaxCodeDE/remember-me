@@ -23,15 +23,17 @@
         <receiver
             android:name="de.rememberme.mascode.rememberme.BootReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="RestartRememberMeServiceAfterKilled" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </receiver>
 
-        <service android:name="de.rememberme.mascode.rememberme.BootService"></service>
+        <receiver
+            android:name="de.rememberme.mascode.rememberme.NotificationReceiver">
+        </receiver>
+
     </application>
 
 </manifest>
