@@ -34,7 +34,13 @@ public class BootService extends Service {
             public void run() {
                 showNotificaton();
             }
-        }, 0, 7200000); // 2 Stunden (Prod) = 7200000 | 30 Sekundne (Dev) = 30000
+        }, 0, 30000); // 30 Minuten (Prod) = 1800000 | 30 Sekunden (Dev) = 30000
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        sendBroadcast(new Intent("RestartRememberMeServiceAfterKilled"));
     }
 
     public void showNotificaton() {

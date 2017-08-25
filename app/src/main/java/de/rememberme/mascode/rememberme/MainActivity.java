@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Intent serviceIntent = new Intent(context, BootService.class);
             context.startService(serviceIntent);
-            Toast.makeText(context, "Service wurde manuell gestartet!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Service wurde gestartet!", Toast.LENGTH_LONG).show();
         }
     }
 
